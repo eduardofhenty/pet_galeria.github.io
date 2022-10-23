@@ -1,0 +1,87 @@
+.container {/*elemento pai*/
+    background-color:gainsboro;
+    min-height:800px;  
+    width: 100%;
+    text-align:center;
+    position:relative;
+    display: flex;
+    flex-flow: column;  
+    flex-grow: 2;
+    flex-basis: auto;    
+}
+
+
+body {
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+}
+
+
+.conteudo {
+    font-family: Arial;    
+    font-size: 12px;      
+    width: 70%;
+    position: relative;
+    top:  50px; 
+    left: 350px;
+    height:auto;    
+    padding: 10px;    
+    font-family: Arial;
+    font-size: 20px; 
+    text-align: justify;           
+}
+
+
+.conteudo >p {
+    font-family: Arial;
+    font-size: 16px; 
+    text-align: justify;
+}
+
+
+.cabecalho  {
+    color:rgb(149, 32, 32) ;    
+    font-family: Arial;
+    font-size: 20px;           
+    height: 80px;
+    background-color:rgb(155, 180, 11);  
+}
+
+.cabecalho h1 {
+    padding-top: 10px;
+}
+
+.center {
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;    
+}
+
+
+.flex {
+	display: flex;
+}
+
+.flex-wrap {
+	flex-wrap: wrap;
+}
+
+
+
+.rodape {
+    background-color:rgb(155, 180, 11);  
+    top: 99 hv ;
+    height: 60px;
+    width: 100%;
+    position: absolute;
+	bottom: 0;    
+}
+
+.rodape  >p {
+    color: white;
+    text-align: justify;
+}
+
+
