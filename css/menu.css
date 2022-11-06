@@ -1,51 +1,157 @@
-*{margin: 0; padding: 0;} 
-
-.menu{
-list-style:none;
-border:1px solid #c0c0c0;
-float:left; 
-position: relative;
-z-index: 999;
+   /*Menu de vários níveis*/
+  /*Definindo algumas varaiveis*/
+:root{
+--cor-menu-principal:#CCC;
+--cor-menu-secundaria:#fff;
+--cor-menu-selecionado: #666;
 }
 
-/* Quem for li dentro da classe menu terá as seguintes propriedades */
-.menu li{
-    position:  relative ;
-    float:left;
-    border-right:1px solid #c0c0c0;    
-}
+   /*Configurações Padrões*/
 
-.menu li a{color:#333; 
-    text-decoration:none;
-    padding:5px 10px;
-    display:block;
-    font-size: 20px;}
+    .menu_h {
+        position: relative;
+        z-index: 999;
+    }
 
-/* Quando percorrer com o rato mude as propriedades */
-.menu li a:hover{
-background:#333;
-color:#fff;
--moz-box-shadow:0 3px 10px 0 #CCC;
--webkit-box-shadow:0 3px 10px 0 #ccc;
-text-shadow:0px 0px 5px #fff;
-}
+    ul.menu,
+    .menu li,
+    .menu a {        
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        text-decoration: none;
+    }
 
-/* Estabele as propriedades do sub menu */
-.menu li  ul{
-    position:absolute;
-    top:25px;
-    left:0;
-    background-color:#fff;
-    display: none;
-}
-.menu li:hover ul, .menu li.over ul{
-    display:block;
-}
+    ul.menu ul {
+        position: absolute;
+        display: none;
+        box-shadow: 3px 3px 2px #333;
+    }
 
-.menu li ul li{
-    border:1px solid #c0c0c0;
-    display:block;
-    width:150px;
-}
+    /* Configurações nivel 1*/
+    ul.menu {
+        float: left;
+        font-family: Verdana, Geneva, sans-serif;
+        font-size: 15px;
+        border-radius: 5px;
+        padding: 0 5px;
+    }
+
+    .menu li {
+        float: left;
+        width: auto;
+        position: relative;
+    }
+
+    .menu li a {
+        display: block;
+        padding: 0 20px;
+        line-height: 45px;
+        height: 45px;
+        float: left;
+        transition: all 0.1s linear;
+    }
+
+    /* Configurações nivel 2*/
+    .menu li:hover>ul.submenu-1 {
+        display: block;
+        top: 45px;
+        left: 0;
+        padding: 5px;
+        width: 200px;
+        border-radius: 0 0 5px 5px;
+    }
+
+    .menu ul.submenu-1 a {
+        width: 160px;
+        padding: 0 20px;
+        border-radius: 5px;
+    }
+
+    /* Configurações nivel 2*/
+    .menu li:hover>ul.submenu-2 {
+        display: block;
+        top: 0;
+        left: 195px;
+        padding: 5px;
+        width: 200px;
+        border-radius: 0 5px 5px 5px;
+    }
+
+    .menu ul.submenu-2 a {
+        width: 160px;
+        padding: 0 20px;
+        border-radius: 5px;
+    }
+
+    /* Configurações nivel 3*/
+    .menu li:hover>ul.submenu-3 {
+        display: block;
+        top: 0;
+        left: 195px;
+        padding: 5px;
+        width: 200px;
+        border-radius: 0 5px 5px 5px;
+    }
+
+    .menu ul.submenu-3 a {
+        width: 160px;
+        padding: 0 20px;
+        border-radius: 5px;
+    }
 
 
+    /*Configurações de cores*/
+
+    /*nivel 1*/
+    .menu {
+        background: var(--cor-menu-principal);     
+    }
+
+    .menu a {
+        color: #000;
+    }
+
+    .menu li:hover>a {
+        background: #999;
+        color: #fff;
+    }
+
+    /*nivel 2*/
+    .submenu-1 {
+        background: var(--cor-menu-secundaria);
+    }
+
+    .submenu-1 a {
+        color: var(--cor-menu-selecionado);
+    }
+
+    .submenu-1 li:hover>a {
+        background: #666;
+    }
+
+    /*nivel 3*/
+    .submenu-2 {
+        background: var(--cor-menu-secundaria);
+    }
+
+    .submenu-2 a {
+        color:var(--cor-menu-selecionado  );
+    }
+
+    .submenu-2 li:hover>a {
+        background: #333;
+    }
+
+    /*nivel 3*/
+    .submenu-3 {
+        background: var(--cor-menu-secundaria);
+    }
+
+    .submenu-3 a {
+        color:var(--cor-menu-selecionado  );
+    }
+
+    .submenu-3 li:hover>a {
+        background: #000;
+    }
